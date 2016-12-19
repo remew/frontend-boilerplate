@@ -4,6 +4,7 @@
   "description": "frontend boilerplate.",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "start": "webpack --watch -d & browser-sync start -s \"./\" --files \"dist/**/*,styles.css,index.html\" --open"
   },
   "repository": {
