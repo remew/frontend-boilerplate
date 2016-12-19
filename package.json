@@ -1,6 +1,6 @@
 {
   "name": "frontend-boilerplate",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "frontend boilerplate.",
   "main": "index.js",
   "scripts": {
@@ -13,8 +13,8 @@
     "url": "git+https://github.com/remew/frontend-boilerplate.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "remew",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/remew/frontend-boilerplate/issues"
   },
