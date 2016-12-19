@@ -3,9 +3,9 @@
 const path = require('path');
 
 module.exports = {
-    entry: ['./src/main.js'],
+    entry: ['./src/scripts/main.ts'],
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, '/dist/scripts'),
         publicPath: '/',
         filename: '/app.bundle.js',
     },
