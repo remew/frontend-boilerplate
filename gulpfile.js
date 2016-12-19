@@ -1,14 +1,10 @@
 'use strict';
 
 const gulp = require('gulp');
-
 const del = require('del');
-
 const webpack = require('webpack');
 const compiler = webpack(require('./webpack.config'));
-
 const browserSync = require('browser-sync').create();
-
 const seq = require('run-sequence');
 
 gulp.task('default', () => {
@@ -26,7 +22,6 @@ gulp.task('build:script', done => {
     compiler.run(done);
 });
 
-//----------------------------------------------------------------------------------------------------------------------
 gulp.task('copy', done => {
     seq('copy:html', 'copy:style', done);
 });
@@ -36,7 +31,6 @@ gulp.task('copy:html', () => {
 gulp.task('copy:style', () => {
     return gulp.src(['src/styles/**/*.css']).pipe(gulp.dest('dist/styles'));
 });
-//----------------------------------------------------------------------------------------------------------------------
 
 gulp.task('watch', ['build'], () => {
     compiler.watch({}, (err) => {
