@@ -10,9 +10,9 @@ frontend boilerplate.
 1. Edit files in `src` directory.
 
 ## Task list
-- `npm clean`
+- `npm run clean`
   - Delete all files in `dist` directory
-- `npm build`
+- `npm run build`
   - Copy `src/**/*.html` and `src/styles/**/*.css` to `dist` directory, compile `src/scripts/main.ts` and output to `src/scripts/app.bundle.js`.
 - `npm start`
   - Start simple server. Browser will auto reload when you edit files in `src` directory.
