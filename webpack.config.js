@@ -3,7 +3,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: ['./src/scripts/main.ts'],
+    entry: ['./src/scripts/main.js'],
     output: {
         path: path.join(__dirname, '/dist/scripts'),
         publicPath: '/',
@@ -16,7 +16,7 @@ module.exports = {
             exclude: /node_modules/,
 
             query: {
-                plugins: ['transform-es2015-modules-commonjs']
+                plugins: ['transform-es2015-modules-commonjs', 'transform-flow-strip-types']
             }
         }, {
             loader: 'ts-loader',

@@ -3,9 +3,12 @@
 const gulp = require('gulp');
 const del = require('del');
 const webpack = require('webpack');
-const compiler = webpack(require('./webpack.config'));
+const config = require('./webpack.config');
 const browserSync = require('browser-sync').create();
 const seq = require('run-sequence');
+
+const execFile = require('child_process').execFile;
+const flow = require('flow-bin');
 
 gulp.task('default', () => {
     console.log('gulp default task. Do nothing.');
@@ -18,8 +21,13 @@ gulp.task('clean', () => {
 gulp.task('build', done => {
     seq('clean', 'build:script', 'copy', done);
 });
-gulp.task('build:script', done => {
-    compiler.run(done);
+gulp.task('build:script', ['typecheck'], done => {
+    // hack
+    const bundler = webpack(config);
+    bundler.run(done);
+});
+gulp.task('typecheck', done => {
+    execFile(flow, ['check'], done);
 });
 
 gulp.task('copy', done => {
@@ -33,13 +41,9 @@ gulp.task('copy:style', () => {
 });
 
 gulp.task('watch', ['build'], () => {
-    compiler.watch({}, (err) => {
-        if (err) {
-            return console.error(err);
-        }
-    });
     gulp.watch(['src/**/*.html'], ['copy:html']);
     gulp.watch(['src/**/*.css'], ['copy:css']);
+    gulp.watch(['src/**/*.js'], ['build:script']);
 });
 
 gulp.task('serve', ['watch'], () => {
