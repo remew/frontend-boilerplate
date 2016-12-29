@@ -1,9 +1,0 @@
-{
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "ES6",
-        "noImplicitAny": true,
-        "sourceMap": true,
-        "strictNullChecks": true
-    }
-}
