@@ -24,16 +24,16 @@
   },
   "homepage": "https://github.com/remew/frontend-boilerplate#readme",
   "devDependencies": {
-    "ava": "^0.19.1",
-    "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.5.2",
+    "ava": "^0.23.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
-    "eslint": "^3.19.0",
-    "eslint-plugin-flowtype": "^2.34.0",
-    "flow-bin": "^0.47.0",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "eslint": "^4.9.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "flow-bin": "^0.57.3",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   }
 }
