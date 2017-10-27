@@ -15,7 +15,7 @@
                 "flow",
                 ["env", {
                     "targets": {
-                        "browsers": ["last 2 versions", "safari 7", "IE 11"]
+                        "browsers": ["last 2 versions", "safari 8", "IE 11"]
                     }
                 }]
             ]
