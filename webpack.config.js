@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -17,6 +18,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlPlugin({
+    }),
+  ],
   resolve: {
     extensions: ['.ts', '.js'],
   },
