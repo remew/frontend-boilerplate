@@ -1,5 +1,10 @@
 {
   "name": "frontend-boilerplate",
+  "scripts": {
+    "build": "npm run clean && webpack",
+    "clean": "rm -rf dist",
+    "serve": "webpack-dev-server"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/remew/frontend-boilerplate.git",
