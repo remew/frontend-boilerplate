@@ -4,13 +4,18 @@ const HtmlPlugin = require('html-webpack-plugin');
 
 const isFileLoaderRegExp = /\.(png|jpg|svg|ttf)$/;
 
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
-  entry: './src/index.tsx',
+  mode: isDevelopment ? 'development' : 'production',
+  devtool: isDevelopment ? 'inline-source-map' : undefined,
+  entry: {
+    app: './src/index.tsx',
+  },
   output: {
-    filename: 'bundle.[hash].js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -21,7 +26,6 @@ module.exports = {
             loader: 'babel-loader',
             options: {
               presets: [
-                '@babel/typescript',
                 '@babel/react',
                 [
                   '@babel/env',
@@ -57,6 +61,12 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'initial',
+      name: 'vendor',
+    },
   },
   devServer: {
     host: '0.0.0.0',
